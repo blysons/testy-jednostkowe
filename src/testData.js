@@ -1,8 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
-import './App.css';
-import React from 'react';
-
-const testData = [
+export const testData = [
   {
     method: 'abs(x)',
     inputValid: 'x = liczba rzeczywista',
@@ -85,66 +81,3 @@ const testData = [
     boundaries: '{-∞, ∞}',
   },
 ];
-
-function App() {
-  return (
-    <div style={{ fontFamily: 'Arial', padding: '2rem' }}>
-      <a href="/tests">Testy jednostkowe (click)</a>
-      <h1>PROJEKTOWANIE I IMPLEMENTACJA TESTÓW</h1>
-      {testData.map((item, index) => (
-        <table
-          key={index}
-          border="1"
-          cellPadding="10"
-          cellSpacing="0"
-          style={{
-            marginBottom: '2rem',
-            borderCollapse: 'collapse',
-            width: '100%',
-          }}
-        >
-          <thead style={{ backgroundColor: '#007fa3', color: 'white' }}>
-            <tr>
-              <th style={{ width: '50%' }}>Metoda</th>
-              <th>{item.method}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <strong>Klasy równoważności wejściowe poprawne</strong>
-              </td>
-              <td>{item.inputValid}</td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Klasy równoważności wejściowe niepoprawne</strong>
-              </td>
-              <td>{item.inputInvalid}</td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Klasy równoważności wyjściowe poprawne</strong>
-              </td>
-              <td>{item.outputValid}</td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Klasy równoważności wyjściowe niepoprawne</strong>
-              </td>
-              <td>{item.outputInvalid}</td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Wartości brzegowe (metoda dwóch wartości granicznych)</strong>
-              </td>
-              <td>{item.boundaries}</td>
-            </tr>
-          </tbody>
-        </table>
-      ))}
-    </div>
-  );
-}
-
-export default App;
